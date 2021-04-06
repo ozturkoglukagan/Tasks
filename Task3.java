@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
+
+
 public class Task3{
 
     static int id=0;
     static String name="";
     static String surname = "";
     static int birthyear = 0000;
-    static double tckn = 0;
+    static int tckn = 0;
     static double balance = 0.0;
     static double debt=0.0;
     //creating multiple Scanners to minimize interfere between Scanners
@@ -92,8 +94,6 @@ public class Task3{
             
           }
         // old code switched with new code
-
-
           /*if (tempNumber==1) {
             getCustomerInfo(cus);
             
@@ -129,15 +129,10 @@ public class Task3{
     }
 
     //to show customer info to the user
-    public static void showCustomerInfo(Customer cus){
-        System.out.println("\n--------------|| Customer "+ cus.id +" ||--------------");
-        System.out.println("Name            : "+cus.name);
-        System.out.println("Surname         : "+cus.surname);
-        System.out.println("Birth Year      : "+cus.birthyear);
-        System.out.printf( "TCKN            : %.0f\n",cus.tckn);
-        System.out.println("Balance         : "+cus.balance);
-        System.out.printf ("Debt            : %.2f\n",cus.debt);
-        
+    public static void showCustomerInfo(Customer cus) throws InterruptedException {
+       cus.print_customer(true);
+       Thread.sleep(1000);
+       mainMenu(cus);
     }
 
     //to check if there is any accout exist or not
@@ -180,6 +175,7 @@ public class Task3{
         }
         cus.id= (int) (cus.tckn % 100000);
         showCustomerInfo(cus);
+        cus.save_customer();
         
         System.out.println("\nCustomer creation successfull.\nReturning to the main menu.\n");
         Thread.sleep(1000);

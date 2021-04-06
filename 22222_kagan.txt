@@ -1,0 +1,8 @@
+
+--------------|| Customer 22222 ||--------------
+Name            : kagan
+Surname         : oz
+Birth Year      : 2000
+TCKN            : 2.2222222222E10
+Balance         : 0.0
+Debt            : 0.0Kagan @2021

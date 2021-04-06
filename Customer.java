@@ -1,4 +1,5 @@
-
+import java.io.File;
+import java.io.FileWriter;
 
 public class Customer {
     
@@ -21,6 +22,45 @@ public class Customer {
     this.balance=balance;
     this.debt=debt;
 
+    }
+
+    public void save_customer() {
+
+        String path_name = this.id + "_"+this.name+".txt";
+
+        String content = this.print_customer(false);
+
+        try {
+        FileWriter myWriter = new FileWriter(new File(path_name));
+
+        myWriter.write(content);
+        myWriter.write("Kagan @2021");
+        myWriter.close();
+        }catch(Exception e){
+            System.out.println("Error on saving customer!!");
+        }
+        
+
+
+
+    }
+
+    public String print_customer(boolean willPrint){
+
+        
+        String customerStr = "\n--------------|| Customer "+ this.id +" ||--------------"+
+        "\nName            : "+this.name+
+        "\nSurname         : "+this.surname+
+        "\nBirth Year      : "+this.birthyear+
+        "\nTCKN            : "+this.tckn+
+        "\nBalance         : "+this.balance+
+        "\nDebt            : "+this.debt;
+        if (willPrint){
+            System.out.println(customerStr);
+        }
+        
+        return customerStr;
+   
     }
 
 

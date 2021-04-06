@@ -1,0 +1,8 @@
+
+--------------|| Customer 78910 ||--------------
+Name            : Emin
+Surname         : Kartci
+Birth Year      : 1999
+TCKN            : 1.234567891E10
+Balance         : 0.0
+Debt            : 0.0Kagan @2021
